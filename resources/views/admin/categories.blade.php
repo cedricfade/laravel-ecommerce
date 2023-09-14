@@ -1,9 +1,9 @@
 @section('title')
-    Catégories 
+    Catégories
 @endsection
 
  @extends('admin_layouts.master')
- 
+
  @section('content')
 
  <div class="content-body">
@@ -12,10 +12,10 @@
         <!-- Row -->
         <input type="hidden" {{ $increment=1 }}>
         <div class="row">
-         
+
             <!-- Modal -->
-     
-            
+
+
             <div class="table-responsive">
                 @if (session('delete'))
                 <div class="alert alert-success alert-dismissible fade show">
@@ -36,19 +36,22 @@
                   </button>
               </div>
                 @endif
-                <table class="table table-responsive-md">
+
+                <table class="table table-responsive-md mt-5">
+
+
                     <thead>
                         <tr>
-                  
+
                             <th><strong>Num</strong></th>
                             <th><strong>Category Name</strong></th>
                             <th><strong>Action</strong></th>
                         </tr>
-                    </thead>    
+                    </thead>
                     <tbody>
-        
+
                   @foreach ($categories as $categorie)
-        
+
                   <tr>
                     <td>{{ $increment }}</td>
 
@@ -82,7 +85,7 @@
                                             <label for="">Modifier catégorie</label>
                                             <input type="text" class="form-control" value="{{ $categorie->category_name  }}" name="category_name">
                                         </div>
-                                          
+
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
@@ -91,15 +94,15 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                         </form>
-             
-                      
+
+
                         </div>
                     </td>
                 </tr>
                 <input type="hidden" {{ $increment++ }}>
-                      
+
                   @endforeach
                     </tbody>
                 </table>
@@ -116,4 +119,3 @@
  <!-- code-highlight -->
 
  @endsection
- 

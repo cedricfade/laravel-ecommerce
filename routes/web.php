@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\SliderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,3 +44,11 @@ Route::get('/orders',[ AdminController::class,'order'])->name('order');
 Route::post('/admin/savecategory',[ CategoryController::class,'saveCategory'])->name('saveCategory');
 Route::delete('/deleteCategorie/{id}',[ CategoryController::class,'deleteCategorie'])->name('deleteCategorie');
 Route::PUT('/categoryEdit/{id}',[ CategoryController::class,'categoryEdit'])->name('categoryEdit');
+
+
+// SLIDER CONTROLLER
+Route::post('/admin/saveslider',[ SliderController::class,'saveslider'])->name('saveSlider');
+Route::delete('/admin/deleteslider/{id}',[ SliderController::class,'deleteslider'])->name('deleteslider');
+Route::PUT('/admin/sliderEdit/{id}',[ SliderController::class,'sliderEdit'])->name('sliderEdit');
+Route::PUT('/admin/unactiveslider/{id}',[ SliderController::class,'unactiveslider'])->name('unactiveslider');
+Route::PUT('/admin/activeslider/{id}',[ SliderController::class,'activeslider'])->name('activeslider');
